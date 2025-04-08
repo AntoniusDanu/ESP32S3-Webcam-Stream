@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitoring PIT Bengkel - ALPR System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 25px;
+        }
+
+        /* Sisi Kiri - Tabel PIT & Summary */
+        .pit-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .pit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .pit-table th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .pit-table td {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .status-empty {
+            color: #95a5a6;
+            font-weight: 500;
+        }
+
+        .status-occupied {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Sisi Kanan - Panel Kontrol */
+        .control-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .simulation-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-simulate {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-clear {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .upload-section {
+            border: 2px dashed #bdc3c7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .activity-log {
+            margin-top: 20px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .log-entry {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Bagian Summary */
+        .summary-section {
+            margin-top: 25px;
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .summary-item {
+            margin: 8px 0;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>🛠️ Monitoring PIT Bengkel Motor - ALPR System</h1>
+    
+    <div class="main-container">
+        <!-- Sisi Kiri - Tabel & Summary -->
+        <div class="pit-container">
+            <h2>Status PIT Real-Time</h2>
+            <table class="pit-table">
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>PIT 1</th>
+                        <th>PIT 2</th>
+                        <th>PIT 3</th>
+                        <th>PIT 4</th>
+                        <th>PIT 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08.00</td>
+                        <td class="status-empty">Empty</td>
+                        <td class="status-empty">Empty</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>09.00</td>
+                        <td class="status-occupied">S 1066 QT</td>
+                        <td class="status-empty">Empty</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <!-- Tambahkan baris waktu lainnya -->
+                </tbody>
+            </table>
+
+            <div class="summary-section">
+                <h3>📝 Summary </h3>
+                <div class="summary-item">
+                    PIT 1 - 08.30-09.00 - S 1066 QT
+                </div>
+                <!-- Tambahkan item summary lainnya -->
+            </div>
+        </div>
+
+        <!-- Sisi Kanan - Kontrol & Log -->
+        <div class="control-panel">
+            <div class="simulation-buttons">
+                <button class="btn-simulate">▶ Mulai Simulasi</button>
+                <button class="btn-clear">🔄 Clear</button>
+            </div>
+
+            <div class="activity-log">
+                <h3>📋 Log Aktivitas</h3>
+                <div class="log-entry">[08:30] Upload image 1</div>
+                <div class="log-entry">[08:31] Processing image 1</div>
+                <div class="log-entry">[08:32] Plat terdeteksi: S 1066 QT</div>
+                <!-- Tambahkan log lainnya -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
